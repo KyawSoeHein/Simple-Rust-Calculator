@@ -1,4 +1,7 @@
+use arithemetics_funs::*;
 use std::io;
+
+mod arithemetics_funs;
 
 fn main() {
     let value1: f32 = get_input(String::from("Enter first value: "));
@@ -17,30 +20,4 @@ fn main() {
         "/" => println!("{}", divide(&value1, &value2)),
         _ => println!("Invalid operator, please use +, -, *, /"),
     }
-}
-
-fn get_input(msg: String) -> f32 {
-    println!("{}", msg);
-    let mut input = String::new();
-    io::stdin()
-        .read_line(&mut input)
-        .expect("Failed to read line");
-
-    return input.trim().parse().unwrap();
-}
-
-fn add(value1: &f32, value2: &f32) -> f32 {
-    return value1 + value2;
-}
-
-fn subtract(value1: &f32, value2: &f32) -> f32 {
-    return value1 - value2;
-}
-
-fn multiply(value1: &f32, value2: &f32) -> f32 {
-    return value1 * value2;
-}
-
-fn divide(value1: &f32, value2: &f32) -> f32 {
-    return value1 / value2;
 }
